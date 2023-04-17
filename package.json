@@ -1,0 +1,27 @@
+{
+  "name": "logogenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DukeLurkin/logoGenerator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DukeLurkin/logoGenerator/issues"
+  },
+  "homepage": "https://github.com/DukeLurkin/logoGenerator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^29.5.0",
+    "svg-captcha": "^1.4.0",
+    "svg.js": "^2.7.1",
+    "svg2png": "^4.1.1"
+  }
+}
