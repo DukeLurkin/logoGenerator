@@ -35,38 +35,31 @@ inquirer
         "Enter a color keyword or a hexadecimal number for the shape (e.g. 'blue' or '#0000ff'):",
     },
   ])
-  .then((answers) => {console.log(answers);
+  .then((answers) => {
+    // console.log(answers);
     let userShape;
-    if(answers.shape === "Triangle"){
-    userShape = new shape.Triangle();
-}
-if(answers.shape === "Circle"){
-    userShape = new shape.Circle();
-}
-if(answers.shape === "Square"){
-    userShape = new shape.Square();
-}
-const userText = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${answers.textColor}">${answers.text}</text>`
-userShape.setColor(answers.shapeColor);
+    if (answers.shape === "Triangle") {
+      userShape = new shape.Triangle();
+    }
+    if (answers.shape === "Circle") {
+      userShape = new shape.Circle();
+    }
+    if (answers.shape === "Square") {
+      userShape = new shape.Square();
+    }
+    const userText = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${answers.textColor}">${answers.text}</text>`
+    userShape.setColor(answers.shapeColor);
 
-const logo = `
-<svg version="1.1"
+    const logo = 
+    `<svg version="1.1"
 width="300" height="200"
 xmlns="http://www.w3.org/2000/svg">
 ${userShape.render()}
 ${userText}
 </svg>
 `
-
-    fs.writeFileSync("logo.svg", logo, (err) =>
-    err ? console.log(err) : console.log('Generated logo.svg'))
-
-
-
-
-
-
-
-
-
-});
+    fs.writeFile('logo.svg', logo, (err) => {
+      if (err) throw err;
+      console.log('Generated logo.svg');
+    }); 
+  });
